@@ -12,6 +12,10 @@
 \usepackage{parskip}
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{lmodern}       % ajout: Latin Modern (Computer Modern avec
+                            % couverture T1 vectorielle)
+\usepackage[T1]{fontenc}   % ajout: encodage T1 requis pour le francais
+                            % (accents et cesure corrects) -- absent du gabarit Poly
 \usepackage[colorlinks=true,urlcolor=blue]{hyperref}
 
 %%%% Marges %%%%
@@ -89,29 +93,28 @@
 \begin{NiceTabularX}{\textwidth}{>{\raggedleft\columncolor{vert_poly}}m{2cm}|>{\columncolor{black!10}}X[m]}
 	\textcolor{white}{\textbf{Nom}}  & Julien Cohen-Adad \\
   \hline
-	\textcolor{white}{\textbf{Bureau}} & [À COMPLÉTER] \\
+	\textcolor{white}{\textbf{Bureau}} & L5610 \\
 	\hline
-	\textcolor{white}{\textbf{Téléphone}} & (514) 340-4711 - Poste [À COMPLÉTER]\\
+	\textcolor{white}{\textbf{Téléphone}} & (514) 340-4711 \#2264\\
 	\hline
 	\textcolor{white}{\textbf{Courriel}} & julien.cohen-adad@polymtl.ca \\
 	\hline
 	\textcolor{white}{\textbf{Disponibilité}} & Sur rendez-vous, ou après la séance du mardi \\
 	\hline
-	\textcolor{white}{Salle} & JAB1035 (mardi 12h45 -- 15h45) \\
+	\textcolor{white}{Salle} & A-526 (mardi 12h45 -- 15h30) \\
 \end{NiceTabularX}
 
 \emph{Le cours fait appel à plusieurs personnes-ressources invitées (voir la rubrique
-\og Personnes-ressources \fg{}). [À COMPLÉTER : ajouter un second bloc de coordonnées si
-une personne co-enseignante est officiellement inscrite au cours.]}
+\og Personnes-ressources \fg{}).}
 
 %--------------------------------------------------------------------------------------------------------%
 \mysection{orange_poly}{Coordonnateur ou coordonnatrice}
 \begin{NiceTabularX}{\textwidth}{>{\raggedleft\columncolor{orange_poly}}m{2cm}|>{\columncolor{black!10}}X[m]}
 	\noalign{\global\arrayrulewidth=1pt}
 	\hline
-	\textcolor{white}{\textbf{Nom}}  & \\
+	\textcolor{white}{\textbf{Nom}} & Julien Cohen-Adad \\
   	\hline
-	\textcolor{white}{Courriel} & prenom.nom@polymtl.ca \\
+	\textcolor{white}{Courriel} & julien.cohen-adad@polymtl.ca \\
 	\hline
 \end{NiceTabularX}
 
@@ -148,7 +151,8 @@ valorisation. Politiques de libre accès.
 \end{NiceTabularX}
 }
 
-\emph{[À VALIDER avec l'analyse de cours et le département : les niveaux ci-dessus sont une
+\emph{[I = Introduit, D = Développé
+(niveau de développement de la qualité dans ce cours). Les niveaux ci-dessus sont une
 proposition. Les qualités 5 (outils), 6 (travail en équipe), 7 (communication) et 12
 (apprentissage continu) sont celles réellement exercées et évaluées dans les laboratoires ;
 les qualités 8, 9 et 10 sont abordées mais non évaluées formellement.]}\\
@@ -234,31 +238,29 @@ recherche confidentielles ou des contenus dont elles ne détiennent pas les droi
 %--------------------------------------------------------------------------------------------------------%
 \mysection{bleu_poly}{Évaluations}
 \renewcommand{\arraystretch}{2}
-\begin{NiceTabularX}{\textwidth}{X|c|>{\centering\arraybackslash}p{1.4in}|c|c|>{\centering\arraybackslash}p{1.4in}}
+\begin{NiceTabularX}{\textwidth}{X|c|>{\centering\arraybackslash}p{1.4in}|c|>{\centering\arraybackslash}p{1.4in}}
  	\rowcolor{bleu_poly}
-	\textcolor{white}{\textbf{Nature}}  & \textcolor{white}{\textbf{Nombre}} & \textcolor{white}{\textbf{Mode de réalisation \linebreak (individuel / équipe)}} & \textcolor{white}{\textbf{Pondération}} & \textcolor{white}{\textbf{Date}} & \textcolor{white}{\textbf{Indicateurs (déclinaisons) des qualités du \textsf{BCAPG}}} \\
+	\textcolor{white}{\textbf{Nature}}  & \textcolor{white}{\textbf{Nombre}} & \textcolor{white}{\textbf{Mode de réalisation \linebreak (individuel / équipe)}} & \textcolor{white}{\textbf{Pondération}} & \textcolor{white}{\textbf{Indicateurs (déclinaisons) des qualités du \textsf{BCAPG}}} \\
 	\hline
 	\rowcolor{black!10}
-	Laboratoire 1 --- Intégration : comptes, outils, première contribution & 1 & Binôme & [X] \% & Semaine 6 & 5.2 \\
+	Laboratoire 1 --- Intégration : comptes, outils, première contribution & 1 & Binôme & 10 \% & 5.2 \\
  	\hline
 	\rowcolor{black!10}
-	Laboratoire 2 --- Données de recherche : organiser, documenter, déposer & 1 & Binôme & [X] \% & Semaine 7 & 5.1 \\
+	Laboratoire 2 --- Données de recherche : organiser, documenter, déposer & 1 & Binôme & 10 \% & 5.1 \\
  	\hline
 	\rowcolor{black!10}
-	Laboratoire 3 --- Construire une étude reproductible & 1 & Binôme & [X] \% & Semaine 8 & 5.4, 7.1 \\
+	Laboratoire 3 --- Construire une étude reproductible & 1 & Binôme & 10 \% & 5.4, 7.1 \\
  	\hline
 	\rowcolor{black!10}
-	Laboratoire 4 --- Reproduire l'étude d'une autre équipe & 1 & Binôme & [X] \% & Semaine 9 & 6.2, 7.1 \\
+	Laboratoire 4 --- Reproduire l'étude d'une autre équipe & 1 & Binôme & 10 \% & 6.2, 7.1 \\
  	\hline
 	\rowcolor{black!10}
-	Laboratoire 5 --- Présentation orale & 1 & Binôme & [X] \% & Semaine 10 & 7.2 \\
+	Laboratoire 5 --- Présentation orale & 1 & Binôme & 10 \% & 7.2 \\
  	\hline
 	\rowcolor{black!10}
-	Examen --- étude de cas d'un projet ouvert & 1 & Individuel & [X] \% & Semaine 11 & 12.3 \\
+	Examen --- étude de cas d'un projet ouvert & 1 & Individuel & 50 \% & 12.3 \\
  	\hline
 \end{NiceTabularX}
-
-\emph{[À COMPLÉTER : pondérations et dates exactes.]}\\
 
 \textbf{Modalités de remise}
 \begin{itemize}
@@ -341,47 +343,49 @@ laboratoire et les lectures sont publiés en libre accès sur le site du cours :
 
 %--------------------------------------------------------------------------------------------------------%
 \mysection{bleu_poly}{Calendrier des rencontres}
-Les séances ont lieu le \textbf{mardi de 12h45 à 15h45}, au local \textbf{JAB1035}.
-[À COMPLÉTER : dates exactes du trimestre.]
 
 \begin{NiceTabularX}{\textwidth}{l|X|X|X|X}
  	\rowcolor{bleu_poly}
-	\textcolor{white}{\textbf{Semaine}}  & \textcolor{white}{\textbf{Thèmes}} & \textcolor{white}{\textbf{TD, Labo, TP}} & \textcolor{white}{\textbf{Lectures et exercices préparatoires}} & \textcolor{white}{\textbf{Évaluation}}  \\
+	\textcolor{white}{\textbf{Date}}  & \textcolor{white}{\textbf{Thèmes}} & \textcolor{white}{\textbf{TD, Labo, TP}} & \textcolor{white}{\textbf{Lectures et exercices préparatoires}} & \textcolor{white}{\textbf{Évaluation}}  \\
 	\hline
 	\rowcolor{black!10}
-	1 & Fondements : reproductibilité et réplicabilité & --- & Créer un compte GitHub & \\
+	2026-08-25 & Fondements : reproductibilité et réplicabilité & --- & Créer un compte GitHub & \\
  	\hline
  	\rowcolor{black!10}
-	2 & Développement ouvert, collaboration, gouvernance et durabilité & --- & \emph{The Turing Way} : chapitre \emph{Open Research} & \\
+	2026-09-01 & Développement ouvert, collaboration, gouvernance et durabilité & --- & \emph{The Turing Way} : chapitre \emph{Open Research} & \\
  	\hline
  	\rowcolor{black!10}
-	3 & Gestion de versions et distribution du code & --- & Installer Git et Python/conda & \\
+	2026-09-08 & Gestion de versions et distribution du code & --- & Installer Git et Python/conda & \\
  	\hline
  	\rowcolor{black!10}
-	4 & Organisation et versionnement des données de recherche & --- & \textbf{Repérer un jeu de données} pour le laboratoire 2 & \\
+	2026-09-15 & Organisation et versionnement des données de recherche & --- & \textbf{Repérer un jeu de données} pour le laboratoire 2 & \\
  	\hline
  	\rowcolor{black!10}
-	5 & Licences, propriété intellectuelle et publication & --- & --- & \\
+	2026-09-22 & Licences, propriété intellectuelle et publication & --- & --- & \\
  	\hline
  	\rowcolor{black!10}
-	6 & --- & Labo 1 : intégration (comptes, outils, première contribution) & Installation complétée avant la séance & Remise labo 1 \\
+	2026-09-29 & --- & Labo 1 : intégration (comptes, outils, première contribution) & Installation complétée avant la séance & Remise labo 1 \\
  	\hline
  	\rowcolor{black!10}
-	7 & --- & Labo 2 : données de recherche & Jeu de données identifié & Remise labo 2 \\
+	2026-10-20 & --- & Labo 2 : données de recherche & Jeu de données identifié & Remise labo 2 \\
  	\hline
  	\rowcolor{black!10}
-	8 & --- & Labo 3 : construire une étude reproductible & --- & Remise labo 3 \\
+	2026-10-27 & --- & Labo 3 : construire une étude reproductible & --- & Remise labo 3 \\
  	\hline
  	\rowcolor{black!10}
-	9 & --- & Labo 4 : reproduire l'étude d'une autre équipe & --- & Remise labo 4 \newline *15 min : Évaluation de l'enseignement \\
+	2026-11-03 & --- & Labo 4 : reproduire l'étude d'une autre équipe & --- & Remise labo 4 \newline *15 min : Évaluation de l'enseignement \\
  	\hline
  	\rowcolor{black!10}
-	10 & --- & Labo 5 : présentations orales & Diapositives déposées avant la séance & Présentation et évaluation par les pairs \\
+	2026-11-10 & --- & Labo 5 : présentations orales & Diapositives déposées avant la séance & Présentation et évaluation par les pairs \\
  	\hline
  	\rowcolor{black!10}
-	11 & --- & --- & Révision & \textbf{Examen} \\
+	2026-11-17 & --- & --- & Révision & \textbf{Examen} \\
  	\hline
 \end{NiceTabularX}
+
+\emph{[Semaines du 6 et du 13 octobre 2026 sans séance : le 6 octobre suit l'horaire du
+lundi (journée de reprise, calendrier officiel) et le 13 octobre tombe pendant la semaine
+de relâche.]}\\
 
 %--------------------------------------------------------------------------------------------------------%
 \mysection{vert_poly}{Charge de travail***}

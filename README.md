@@ -35,6 +35,12 @@ Update at minimum: the term (`\session`), the calendar dates, the evaluation
 weightings and dates, and the week in which the teaching evaluation takes place
 (15 minutes of class time — required by CONSAC since June 2025).
 
+For the calendar dates, check the official term dates and holidays at
+<https://etudiant.polymtl.ca/etudes/calendriers-et-horaires> — term start/end,
+reading week, and any holiday falling on the course's weekday. Recompute each
+`Semaine N` date from the term's first class day, skipping the reading-break
+week and any holiday that lands on the course's weekday.
+
 ### 2. Build locally and check it
 
 ```bash
@@ -62,18 +68,20 @@ source builds cleanly from scratch, not just on your machine.
 This is what publishes the PDF at a permanent address.
 
 ```bash
-git tag -a a2026 -m "Plan de cours, automne 2026"
-git push origin a2026
+git tag -a 2026.0 -m "Plan de cours, automne 2026"
+git push origin 2026.0
 ```
 
-Tag names follow the Poly convention: `a2026` for autumn, `h2027` for winter.
-If a correction is needed mid-term, bump the tag (`a2026.1`) rather than moving
-the existing one — the previous version stays reachable, which is the point.
+Tags are `<year>.<n>`: `2026.0` for the year's first release, `2026.1`,
+`2026.2`, ... for any later correction that same year — whether it's a
+mid-term fix or a second offering of the course later in the year. Bump the
+number rather than moving an existing tag — the previous version stays
+reachable, which is the point.
 
 ### 5. Put the link on Moodle
 
 ```
-https://github.com/polymtl-reproducible-research/ing8100/releases/download/a2026/ING8100_plan_de_cours.pdf
+https://github.com/polymtl-reproducible-research/ing8100/releases/download/2026.0/ING8100_plan_de_cours.pdf
 ```
 
 Substitute your tag. Use the **pinned tag** on Moodle so students always see the
