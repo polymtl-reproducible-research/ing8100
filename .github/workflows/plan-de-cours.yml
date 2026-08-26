@@ -1,0 +1,59 @@
+name: Plan de cours
+
+# Builds the plan de cours PDF from LaTeX source on every change.
+# The PDF is never committed — it is produced here, attached to the run as an
+# artefact, and published as a release asset when a tag is pushed.
+
+on:
+  push:
+    paths:
+      - 'plan-de-cours/**'
+      - '.github/workflows/plan-de-cours.yml'
+  pull_request:
+    paths:
+      - 'plan-de-cours/**'
+      - '.github/workflows/plan-de-cours.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write        # needed only for the release step
+
+jobs:
+  build:
+    name: Compile PDF
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      # The Polytechnique template pins its own nicematrix.sty, which is
+      # committed next to the .tex. It is load-bearing: recent TeX Live versions
+      # ship a nicematrix that requires the `color-inside` key for \rowcolor
+      # outside \CodeBefore, which the template does not use — so the installed
+      # version fails where the pinned one succeeds. The pinned copy in turn
+      # needs a LaTeX kernel from TeX Live 2024 or later.
+      #
+      # If this job ever fails with either
+      #   "Your LaTeX release is too old"                  -> image too old
+      #   "you should have used the key 'color-inside'"    -> pinned .sty missing
+      # check that plan-de-cours/nicematrix.sty is present and that the image
+      # below is a current TeX Live.
+      - name: Compile with LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: plan-de-cours
+          root_file: ING8100_plan_de_cours.tex
+
+      - name: Upload the PDF as a build artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ING8100_plan_de_cours
+          path: plan-de-cours/ING8100_plan_de_cours.pdf
+          if-no-files-found: error
+
+      - name: Attach the PDF to the release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: plan-de-cours/ING8100_plan_de_cours.pdf

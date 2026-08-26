@@ -1,0 +1,650 @@
+\documentclass[10pt]{article}
+
+\usepackage[table,usenames,dvipsnames]{xcolor}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{changepage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{nicematrix}
+\usepackage{parskip}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+
+%%%% Marges %%%%
+\hoffset 		-45pt
+\oddsidemargin    0pt
+\topmargin 		-72pt
+\textwidth 		560pt
+\textheight		700pt
+%%%%
+
+%%%% Définition des couleurs %%%%
+\definecolor{bleu_poly}{RGB}{80, 187, 230}
+\definecolor{vert_poly}{cmyk}{78, 0, 100, 0}
+\definecolor{orange_poly}{RGB}{255, 96, 5}
+\definecolor{rouge_poly}{RGB}{211, 1, 47}
+
+\newcommand{\mysection}[2]{%
+  \section*{%
+    \begingroup
+      \setlength{\fboxsep}{6pt}% inner padding
+      \colorbox{#1}{%
+        \parbox[c][16pt][c]{\dimexpr\linewidth-2\fboxsep\relax}{\textcolor{white}{\MakeUppercase{#2}}}%
+      }%
+    \endgroup
+  }%
+}
+%%%%
+
+%%%% Mise en page %%%%
+\pagestyle{fancy}
+\lfoot{PLAN DE COURS}
+\rfoot{\thepage \hspace{2ex} \raisebox{-0.25\height}{\includegraphics[height=0.5cm] {Symbole_Polytechnique_Montreal_noir_rgb}}}
+\cfoot{}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headwidth}{\textwidth} % or just delete the line
+\fancyheadoffset{0pt}
+\fancyfootoffset{0pt}
+
+\renewcommand{\familydefault}{\sfdefault}
+\NiceMatrixOptions{rules/color=white, rules/width=1pt}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+%%%%
+
+%%%% Informations sur le cours
+\newcommand{\sigle}{ING8100}
+\newcommand{\titrecours}{\textbf{Science ouverte et recherche reproductible}}
+\newcommand{\departement}{génie électrique}
+\newcommand{\session}{Automne 2026}
+\newcommand{\credits}{2}
+\newcommand{\triplet}{1,5 - 1,5 - 3}
+\newcommand{\urlcours}{https://moodle.polymtl.ca/course/view.php?id=4966}
+%%%%
+
+
+\begin{document}
+\includegraphics[height=2cm]{Symbole_Polytechnique_Montreal_noir_rgb} \hfill \includegraphics[height=2cm]{Logo_Polytechnique_Montreal_noir}\\
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{bleu_poly}{Plan de cours}
+\begin{adjustwidth}{50pt}{50pt}
+  \Large
+	\textbf{\sigle} - \textbf{\titrecours}\\
+	Département de \departement\\
+	\session\\
+	\credits{} Crédits\\
+	Triplet horaire: \triplet\\
+	\href{\urlcours}{moodle.polymtl.ca}
+\end{adjustwidth}
+
+%--------------------------------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------------------------------%
+\mysection{vert_poly}{Coordonnées et disponibilités}
+\begin{NiceTabularX}{\textwidth}{>{\raggedleft\columncolor{vert_poly}}m{2cm}|>{\columncolor{black!10}}X[m]}
+	\textcolor{white}{\textbf{Nom}}  & Julien Cohen-Adad \\
+  \hline
+	\textcolor{white}{\textbf{Bureau}} & [À COMPLÉTER] \\
+	\hline
+	\textcolor{white}{\textbf{Téléphone}} & (514) 340-4711 - Poste [À COMPLÉTER]\\
+	\hline
+	\textcolor{white}{\textbf{Courriel}} & julien.cohen-adad@polymtl.ca \\
+	\hline
+	\textcolor{white}{\textbf{Disponibilité}} & Sur rendez-vous, ou après la séance du mardi \\
+	\hline
+	\textcolor{white}{Salle} & JAB1035 (mardi 12h45 -- 15h45) \\
+\end{NiceTabularX}
+
+\emph{Le cours fait appel à plusieurs personnes-ressources invitées (voir la rubrique
+\og Personnes-ressources \fg{}). [À COMPLÉTER : ajouter un second bloc de coordonnées si
+une personne co-enseignante est officiellement inscrite au cours.]}
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{orange_poly}{Coordonnateur ou coordonnatrice}
+\begin{NiceTabularX}{\textwidth}{>{\raggedleft\columncolor{orange_poly}}m{2cm}|>{\columncolor{black!10}}X[m]}
+	\noalign{\global\arrayrulewidth=1pt}
+	\hline
+	\textcolor{white}{\textbf{Nom}}  & \\
+  	\hline
+	\textcolor{white}{Courriel} & prenom.nom@polymtl.ca \\
+	\hline
+\end{NiceTabularX}
+
+%--------------------------------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------------------------------%
+\mysection{rouge_poly}{Description du cours}
+Science ouverte en ingénierie. Reproductibilité et réplicabilité des résultats scientifiques.
+Transparence des méthodes, du code et des données. Collaboration scientifique et contribution à
+des projets ouverts. Gestion de versions du code et des données de recherche. Cycle de vie des
+données de recherche. Diffusion des résultats et des données en libre accès. Licences ouvertes
+et propriété intellectuelle appliquées à la recherche. Articulation ouverture scientifique et
+valorisation. Politiques de libre accès.
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{bleu_poly}{Qualités du BCAPG}
+{
+\renewcommand{\arraystretch}{1.5}
+\begin{NiceTabularX}{\textwidth}{Y|Y|Y|Y|Y|Y}
+  \rowcolor{black!30}
+  \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6}\\
+  \rowcolor{black!30}
+	Connaissances en génie  & Analyse de problèmes & Investigation & Conception & Utilisation d'outils d'ing. & Travail ind. et en équipe  \\
+	\hline
+	\rowcolor{black!10}
+	& & & & D & D	\\
+  \hline
+  \rowcolor{black!30}
+  \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12}\\
+  \rowcolor{black!30}
+	Communication & Professionalisme & Impacts soc. et environn. & Déontologie et équité & Économie et gestion de projets & Apprentissage continue \\
+  \hline
+  \rowcolor{black!10}
+  D	& I	& I	& I	&	& D	\\
+\end{NiceTabularX}
+}
+
+\emph{[À VALIDER avec l'analyse de cours et le département : les niveaux ci-dessus sont une
+proposition. Les qualités 5 (outils), 6 (travail en équipe), 7 (communication) et 12
+(apprentissage continu) sont celles réellement exercées et évaluées dans les laboratoires ;
+les qualités 8, 9 et 10 sont abordées mais non évaluées formellement.]}\\
+
+\begin{center}
+\begin{NiceTabularX}{\textwidth}{Y|Y|Y}
+	\rowcolor{bleu_poly}
+	\textcolor{white}{\textbf{COURS PRÉALABLES}} & \textcolor{white}{\textbf{COURS COREQUIS}} & \textcolor{white}{\textbf{COURS SUBSÉQUENTS}} \\
+	\hline
+	\rowcolor{black!10}
+	Aucun	& Aucun	& Aucun	\\
+\end{NiceTabularX}
+\end{center}
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{vert_poly}{Objectifs d'apprentissage}
+À la fin de ce cours, la personne étudiante sera en mesure de :\\
+
+\begin{NiceTabularX}{\textwidth}{X|>{\centering\arraybackslash}m{0.3\textwidth}}
+	\rowcolor{vert_poly}
+	\textcolor{white}{\textbf{Objectifs}} & \textcolor{white}{\textbf{Correspondance avec les qualités du BCAPG}}  \\
+	\rowcolor{black!10}
+ 	1. Distinguer reproductibilité et réplicabilité, et situer ces notions dans le contexte des crises de reproductibilité et des besoins propres à l'ingénierie. & 12.1 \\
+ 	\hline
+	\rowcolor{black!10}
+ 	2. Appliquer les pratiques de collaboration des projets ouverts : suivi des enjeux, revue de code, demandes de fusion, communication dans une communauté. & 6.2, 7.1 \\
+ 	\hline
+	\rowcolor{black!10}
+ 	3. Gérer les versions du code, des environnements d'exécution et des artéfacts, et en évaluer l'incidence sur la reproductibilité. & 5.2, 5.4 \\
+ 	\hline
+	\rowcolor{black!10}
+ 	4. Organiser, documenter, versionner et déposer un jeu de données de recherche selon les standards de sa communauté et les exigences des organismes subventionnaires. & 5.1, 10.2 \\
+ 	\hline
+	\rowcolor{black!10}
+ 	5. Choisir et justifier une stratégie de licence pour le code, les données et les contenus, et diffuser ses résultats en libre accès. & 10.1, 10.2 \\
+ 	\hline
+	\rowcolor{black!10}
+ 	6. Évaluer la gouvernance, la durabilité et la fiabilité d'un projet ouvert, et communiquer cette évaluation. & 7.2, 12.3 \\
+ 	\hline
+\end{NiceTabularX}
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{orange_poly}{Utilité du cours}
+Les pratiques enseignées dans ce cours sont devenues des conditions d'admissibilité au
+financement de la recherche. La Politique des trois organismes sur le libre accès aux
+publications est en vigueur depuis 2015 et fait l'objet d'une révision vers un accès immédiat
+sans embargo ; la Politique des trois organismes sur la gestion des données de recherche exige
+déjà des plans de gestion de données pour un nombre croissant de concours, et le dépôt des
+données est appelé à devenir obligatoire.
+
+Au-delà de la conformité, les compétences développées (gestion de versions, revue de code,
+documentation technique, gestion de données) sont directement transférables en recherche comme
+en R\&D industrielle, et une contribution ouverte est visible par un employeur d'une manière
+qu'un mémoire ou une thèse ne permet pas.
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{rouge_poly}{Méthodes d'enseignement et d'apprentissage}
+Le cours combine cinq séances théoriques et cinq séances de laboratoire, suivies d'un examen.
+Les laboratoires se déroulent \textbf{en binôme} et s'appuient, dans la mesure du possible, sur
+le projet de recherche de la personne étudiante. L'approche est celle de l'apprentissage par
+projet : les concepts présentés en séance théorique sont appliqués à un projet réel dont la
+personne étudiante est responsable.
+
+Le laboratoire 4 repose sur l'\textbf{évaluation par les pairs} : chaque équipe tente de
+reproduire l'étude produite par une autre équipe, signale les problèmes rencontrés sous forme
+d'enjeux (\emph{issues}) et propose des correctifs. La qualité de la communication écrite dans
+ces échanges fait partie de l'évaluation. La présentation orale (laboratoire 5) comporte
+également une composante d'évaluation par les pairs.
+
+\textbf{Systèmes d'intelligence artificielle générative (SIAG)}\\
+L'usage des SIAG (ChatGPT, Claude, GitHub Copilot, etc.) est \textbf{permis} dans ce cours, à
+la condition d'en mentionner l'usage de manière explicite et vérifiable. Cette exigence n'est
+pas une formalité administrative : elle est une application directe du sujet du cours. La
+provenance et la traçabilité des contributions à un travail de recherche sont précisément ce
+que ce cours enseigne, et un outil génératif est une source parmi d'autres.
+
+Concrètement, les travaux remis doivent documenter l'usage des SIAG (par exemple dans un
+fichier dédié du dépôt), en précisant l'outil, sa version lorsque disponible, et la nature de
+la contribution. Les personnes étudiantes demeurent entièrement responsables du contenu remis,
+y compris de son exactitude. Il est par ailleurs interdit de verser dans un SIAG des données de
+recherche confidentielles ou des contenus dont elles ne détiennent pas les droits.
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{bleu_poly}{Évaluations}
+\renewcommand{\arraystretch}{2}
+\begin{NiceTabularX}{\textwidth}{X|c|>{\centering\arraybackslash}p{1.4in}|c|c|>{\centering\arraybackslash}p{1.4in}}
+ 	\rowcolor{bleu_poly}
+	\textcolor{white}{\textbf{Nature}}  & \textcolor{white}{\textbf{Nombre}} & \textcolor{white}{\textbf{Mode de réalisation \linebreak (individuel / équipe)}} & \textcolor{white}{\textbf{Pondération}} & \textcolor{white}{\textbf{Date}} & \textcolor{white}{\textbf{Indicateurs (déclinaisons) des qualités du \textsf{BCAPG}}} \\
+	\hline
+	\rowcolor{black!10}
+	Laboratoire 1 --- Intégration : comptes, outils, première contribution & 1 & Binôme & [X] \% & Semaine 6 & 5.2 \\
+ 	\hline
+	\rowcolor{black!10}
+	Laboratoire 2 --- Données de recherche : organiser, documenter, déposer & 1 & Binôme & [X] \% & Semaine 7 & 5.1 \\
+ 	\hline
+	\rowcolor{black!10}
+	Laboratoire 3 --- Construire une étude reproductible & 1 & Binôme & [X] \% & Semaine 8 & 5.4, 7.1 \\
+ 	\hline
+	\rowcolor{black!10}
+	Laboratoire 4 --- Reproduire l'étude d'une autre équipe & 1 & Binôme & [X] \% & Semaine 9 & 6.2, 7.1 \\
+ 	\hline
+	\rowcolor{black!10}
+	Laboratoire 5 --- Présentation orale & 1 & Binôme & [X] \% & Semaine 10 & 7.2 \\
+ 	\hline
+	\rowcolor{black!10}
+	Examen --- étude de cas d'un projet ouvert & 1 & Individuel & [X] \% & Semaine 11 & 12.3 \\
+ 	\hline
+\end{NiceTabularX}
+
+\emph{[À COMPLÉTER : pondérations et dates exactes.]}\\
+
+\textbf{Modalités de remise}
+\begin{itemize}
+\item[\tiny $\blacksquare$] Les travaux sont remis sous forme de dépôt public sur l'organisation GitHub du cours (\url{https://github.com/polymtl-reproducible-research}), sauf indication contraire.
+\item[\tiny $\blacksquare$] Le jeu de données du laboratoire 2 est déposé sur l'instance d'enseignement de Borealis.
+\item[\tiny $\blacksquare$] L'état du dépôt à l'heure limite de remise fait foi ; l'historique Git sert de preuve de dépôt.
+\item[\tiny $\blacksquare$] Tout retard doit être signalé avant l'échéance. [À COMPLÉTER : politique de pénalité.]
+\item[\tiny $\blacksquare$] L'usage des SIAG doit être documenté (voir la rubrique \og Méthodes d'enseignement et d'apprentissage \fg{}).
+\end{itemize}
+
+\begin{NiceTabularX}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+ 	\rowcolor{bleu_poly}
+	\textcolor{white}{\textbf{Qualité(s) du BCAPG évaluée(s) dans ce cours}}  & \textcolor{white}{\textbf{Évaluation utilisée (ou portion d'une évaluation)}} & \textcolor{white}{\textbf{Niveau de développement de la qualité (I, D ou A)}}  \\
+	\hline
+	\rowcolor{black!10}
+	5 --- Utilisation d'outils d'ingénierie	& Laboratoires 1 à 3	& D		\\
+ 	\hline
+ 	\rowcolor{black!10}
+	6 --- Travail individuel et en équipe	& Laboratoire 4 (échanges entre équipes)	& D		\\
+ 	\hline
+ 	\rowcolor{black!10}
+	7 --- Communication	& Laboratoire 4 (documentation et enjeux) et laboratoire 5 (présentation orale)	& D		\\
+ 	\hline
+ 	\rowcolor{black!10}
+	12 --- Apprentissage continu	& Examen (étude de cas)	& D		\\
+ 	\hline
+\end{NiceTabularX}
+
+\textbf{Évaluation de l'enseignement}
+
+Une période de 15 minutes sera réservée en classe durant la \textbf{semaine 9} pour permettre aux
+personnes étudiantes de remplir le questionnaire d'évaluation de l'enseignement. Cette
+rétroaction confidentielle est importante pour l'amélioration continue du cours.
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{vert_poly}{Critères d'évaluation}
+Les grilles détaillées sont publiées sur le site du cours
+(\url{https://reproducible-research.polymtl.ca}) au lancement de chaque laboratoire. Les
+critères transversaux sont les suivants.
+
+\textbf{Contenu du dépôt} --- présence, clarté et pertinence des fichiers attendus :
+\texttt{README}, \texttt{LICENSE}, \texttt{CONTRIBUTING}, \texttt{CODE\_OF\_CONDUCT},
+\texttt{.gitignore}, documentation de l'usage des SIAG, et intégration continue (bonus).
+Deux critères priment : la \emph{concision} (les éléments importants sont-ils faciles à
+trouver ?) et la \emph{présence de l'information pertinente}.
+
+\textbf{Respect des pratiques} --- qualité des messages de \emph{commit}, protection de la
+branche principale et révision des demandes de fusion, structure des dossiers, absence de
+fichiers binaires versionnés, présence d'un environnement d'exécution documenté, cohérence
+linguistique du code et de la documentation.
+
+\textbf{Qualité de la communication} --- clarté et ton des enjeux et des demandes de fusion,
+qualité des rapports de bogue (version du code, système d'exploitation, données utilisées,
+étapes de reproduction), et qualité de la réponse aux signalements reçus.
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{orange_poly}{Personnes-ressources}
+Plusieurs séances sont animées ou co-animées par des personnes-ressources invitées.
+[À COMPLÉTER : confirmer la liste et les coordonnées.]
+
+\begin{itemize}
+\item[\tiny $\blacksquare$] \textbf{Bibliothèque de Polytechnique} --- dépôt de données, choix d'un entrepôt, Borealis : consulter \url{https://guides.biblio.polymtl.ca/donneesrecherche/choisir} avant de solliciter l'équipe enseignante.
+\item[\tiny $\blacksquare$] \textbf{Questions techniques} (installation, Git, environnements) --- ouvrir un enjeu sur l'organisation GitHub du cours plutôt que d'écrire par courriel : la réponse profite alors à l'ensemble du groupe et demeure consultable.
+\item[\tiny $\blacksquare$] \textbf{Questions administratives et d'horaire} --- forum du site Moodle du cours.
+\end{itemize}
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{rouge_poly}{Documentation}
+\textbf{Obligatoire} --- Aucun manuel à acheter. Les notes de cours, les énoncés de
+laboratoire et les lectures sont publiés en libre accès sur le site du cours :
+\url{https://reproducible-research.polymtl.ca}
+
+\textbf{Facultative}
+\begin{itemize}
+\item[\tiny $\blacksquare$] \emph{The Turing Way} --- guide communautaire de la recherche reproductible : \url{https://book.the-turing-way.org}
+\item[\tiny $\blacksquare$] \emph{Open Science Training Handbook} (CC0) : \url{https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/}
+\item[\tiny $\blacksquare$] \emph{Open Science 101} (NASA) --- formation libre et gratuite, avec attestation : \url{https://science.nasa.gov/open-science/training/}
+\item[\tiny $\blacksquare$] Politique des trois organismes sur la gestion des données de recherche : \url{https://science.gc.ca/site/science/fr/financement-interorganismes-recherche/politiques-lignes-directrices/gestion-donnees-recherche}
+\end{itemize}
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{bleu_poly}{Calendrier des rencontres}
+Les séances ont lieu le \textbf{mardi de 12h45 à 15h45}, au local \textbf{JAB1035}.
+[À COMPLÉTER : dates exactes du trimestre.]
+
+\begin{NiceTabularX}{\textwidth}{l|X|X|X|X}
+ 	\rowcolor{bleu_poly}
+	\textcolor{white}{\textbf{Semaine}}  & \textcolor{white}{\textbf{Thèmes}} & \textcolor{white}{\textbf{TD, Labo, TP}} & \textcolor{white}{\textbf{Lectures et exercices préparatoires}} & \textcolor{white}{\textbf{Évaluation}}  \\
+	\hline
+	\rowcolor{black!10}
+	1 & Fondements : reproductibilité et réplicabilité & --- & Créer un compte GitHub & \\
+ 	\hline
+ 	\rowcolor{black!10}
+	2 & Développement ouvert, collaboration, gouvernance et durabilité & --- & \emph{The Turing Way} : chapitre \emph{Open Research} & \\
+ 	\hline
+ 	\rowcolor{black!10}
+	3 & Gestion de versions et distribution du code & --- & Installer Git et Python/conda & \\
+ 	\hline
+ 	\rowcolor{black!10}
+	4 & Organisation et versionnement des données de recherche & --- & \textbf{Repérer un jeu de données} pour le laboratoire 2 & \\
+ 	\hline
+ 	\rowcolor{black!10}
+	5 & Licences, propriété intellectuelle et publication & --- & --- & \\
+ 	\hline
+ 	\rowcolor{black!10}
+	6 & --- & Labo 1 : intégration (comptes, outils, première contribution) & Installation complétée avant la séance & Remise labo 1 \\
+ 	\hline
+ 	\rowcolor{black!10}
+	7 & --- & Labo 2 : données de recherche & Jeu de données identifié & Remise labo 2 \\
+ 	\hline
+ 	\rowcolor{black!10}
+	8 & --- & Labo 3 : construire une étude reproductible & --- & Remise labo 3 \\
+ 	\hline
+ 	\rowcolor{black!10}
+	9 & --- & Labo 4 : reproduire l'étude d'une autre équipe & --- & Remise labo 4 \newline *15 min : Évaluation de l'enseignement \\
+ 	\hline
+ 	\rowcolor{black!10}
+	10 & --- & Labo 5 : présentations orales & Diapositives déposées avant la séance & Présentation et évaluation par les pairs \\
+ 	\hline
+ 	\rowcolor{black!10}
+	11 & --- & --- & Révision & \textbf{Examen} \\
+ 	\hline
+\end{NiceTabularX}
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{vert_poly}{Charge de travail***}
+Le triplet horaire du cours est \textbf{1,5 - 1,5 - 3} pour 2 crédits, soit environ 90 heures
+au total réparties comme suit :
+
+\begin{NiceTabularX}{\textwidth}{X|c}
+	\rowcolor{vert_poly}
+	\textcolor{white}{\textbf{Activité}} & \textcolor{white}{\textbf{Heures (approx.)}} \\
+	\hline
+	\rowcolor{black!10}
+	Séances théoriques & 22,5 \\
+	\hline
+	\rowcolor{black!10}
+	Séances de laboratoire & 22,5 \\
+	\hline
+	\rowcolor{black!10}
+	Travail personnel (laboratoires, lectures, préparation de l'examen) & 45 \\
+\end{NiceTabularX}
+
+\emph{Note : les laboratoires 3 et 4 se poursuivent normalement en dehors des heures de séance,
+les échanges entre équipes s'étalant sur plusieurs semaines.}\\
+
+*** Cette information est donnée à titre indicatif seulement. Certaines personnes peuvent avoir besoin d'investir plus ou moins de temps.
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{orange_poly}{Fraude : règlement et sanctions}
+En tant que futur ingénieur, les étudiantes et les étudiants doivent adopter une attitude professionnelle exemplaire. L'article 8 des règlements des études au baccalauréat présente la position de Polytechnique Montréal à l'égard de la fraude sur la base du principe de tolérance zéro. Voici quelques éléments  \href{https://etudiant.polymtl.ca/plagiat/reglement-et-sanctions}{\underline{tirés du règlement}} en vigueur.
+
+Par fraude, on entend toute forme de plagiat, de tricherie ou tout autre moyen illicite utilisé par une étudiante ou un étudiant pour obtenir un résultat d'évaluation non mérité ou pour influencer une décision relative à un dossier académique.
+
+À titre d'exemple, constituent une fraude :
+\begin{itemize} 
+\item[\tiny $\blacksquare$] l'utilisation totale ou partielle, littérale ou déguisée, d'une \oe uvre d'autrui, y compris tout extrait provenant d'un support électronique (d'une IA générative, par exemple), en le faisant passer pour sien ou sans indication de référence à l'occasion d'un examen, d'un travail ou de toute autre activité faisant l'objet d'une évaluation; 
+\item[\tiny $\blacksquare$]	le non respect des consignes lors d'un contrôle, d'un examen, d'un travail ou de toute autre activité faisant l'objet d'une évaluation;
+\item[\tiny $\blacksquare$]	la sollicitation, l'offre ou l'échange d'information pendant un contrôle ou un examen; 
+\item[\tiny $\blacksquare$]	la falsification de résultats d'une évaluation ou de tout document en faisant partie; 
+\item[\tiny $\blacksquare$]	la possession ou l'utilisation pendant un contrôle ou un examen  de tout document, matériel ou équipement non autorisé y compris la copie d'examen d'une autre personne étudiante. \\
+\end{itemize}
+
+Selon la gravité de l'infraction et l'existence de circonstances atténuantes ou aggravantes, l'étudiante ou l'étudiant peut se voir imposer une sanction correspondant à, entre autres, l'attribution de la cote 0 pour l'examen, le travail ou toute autre activité faisant l'objet d'une évaluation qui est en cause, l'attribution de la note F pour le cours en cause, l'attribution de la note F à tous les cours suivis au trimestre.
+
+Dans le cas d'un travail en équipe, les étudiantes et les étudiants d'une même équipe de travail tel que reconnu par l'enseignant sont solidaires du matériel produit au nom de l'équipe. Si un membre de l'équipe produit et remet un travail au nom de l'équipe et qu'il s'avère que ce travail est frauduleux tous les membres de l'équipe sont susceptibles de recevoir une sanction à moins qu'il soit démontré sans ambiguïté que l'infraction est le fait d'un ou de quelques membres de l'équipe en particulier. 
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{rouge_poly}{Ressources et services pour les étudiantes et étudiants}
+Le \href{https://etudiant.polymtl.ca/sep/}{\underline{Service aux étudiants}} (SEP) est constitué de professionnels qualifiés et d'une Escouade étudiante, dédiés à favoriser votre bien-être et votre réussite à Polytechnique Montréal, autant sur le plan académique, personnel que social. Que ce soit sous la forme de rencontres individuelles, d'ateliers pratiques ou de programmes tels que le tutorat et le mentorat, les services offerts vous aideront à vous épanouir à votre plein potentiel durant vos études à Polytechnique Montréal. N'hésitez pas à les contacter. Vous avez tout à y gagner !\\
+
+Le \href{https://www.polymtl.ca/bipcv/}{\underline{Bureau d'intervention et de prévention des conflits et de la violence}} (BIPCV), vous accueille, vous guide et vous soutient en matière de violence à caractère sexuel, harcèlement ou tout enjeu relatif au respect des personnes. Le BIPCV est un bureau indépendant, assurant un service respectant la confidentialité et une écoute sans jugement. Contactez-les : bipcv@polymtl.ca  514 340-4711 Poste 5151. 
+
+%--------------------------------------------------------------------------------------------------------%
+\mysection{bleu_poly}{Qualités requises des diplômé.es par le BCAPG}
+Cette rubrique vise à rappeler aux étudiantes et aux étudiants les QRD pour lesquelles ce cours constitue un niveau introduit (I), développé (D) ou avancé (A), et s'il y a un contrôle des acquis (CA).)
+
+* : I = Introduit, D = développé, A = Avancé. (CA = Contrôle des Acquis, si pertinent)
+\begin{itemize}
+  \item[$\bullet$] \noindent \textbf{Introduit} : Niveau où la personne étudiant commence à développer la qualité.
+  \item[$\bullet$] \textbf{Développé} : Niveau où la personne étudiant commence approfondit ou renforce son développement de la qualité.
+  \item[$\bullet$] \textbf{Avancé} : Niveau où la personne étudiant consolide son développement de la qualité.
+\end{itemize}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{scriptsize}
+\setlength{\tabcolsep}{3pt}
+
+\begin{NiceTabularX}{\textwidth}{|p{8pt}|p{4in}|X|l|}[rules/color=black]
+	\hline \rowcolor{bleu_poly}
+	& \textcolor{white}{\textbf{Qualité}}
+	& \textcolor{white}{\textbf{Indicateur (déclinaison)}}
+	& \textcolor{white}{\textbf{I, D, A, CA (*)}} \\
+	\hline
+1 & \Block[l,t]{3-1}{\textbf{Connaissances en génie} : connaissance, à un niveau universitaire, des mathématiques, des sciences naturelles et des notions fondamentales de l'ingénierie, ainsi qu'une spécialisation en génie propre au programme.} 
+	& 1.1 Démontrer des connaissances de base en mathématiques et en sciences   
+ 	& \\ 
+ 	\cline{3-4}
+ 	&  
+ 	& 1.2 Démontrer des connaissances de base en génie 
+ 	& \\ 
+ 	\cline{3-4}
+ 	& 
+ 	& 1.3 Démontrer des connaissances avancées en génie
+ 	& \\ 
+ 	\hline
+2 	& \Block[l,t]{6-1}{\textbf{Analyse de problèmes} : capacité d'utiliser les connaissances et les principes appropriés pour identifier, formuler, analyser et résoudre des problèmes d'ingénierie complexes et en arriver à des conclusions étayées.} 
+ 	& 2.1 Identifier et formuler un problème 
+ 	& \\
+	\cline{3-4}
+	&
+	& 2.2 Explorer des approches de résolution et planifier la démarche 
+	& \\
+ 	\cline{3-4}
+	&
+	& 2.3 Conceptualiser ou modéliser le problème
+	& \\
+ 	\cline{3-4}
+	&
+	& 2.4 Produire des résultats
+	& \\
+ 	\cline{3-4}
+	& 
+	& 2.5 Valider ses résultats et recommander 
+	& \\
+ 	\cline{3-4}
+	&
+	& 2.6 Analyser l'incertitude, la sensibilité et les limites des approches 
+	& \\
+	\hline
+3 	& \Block[l,t]{6-1}{\textbf{Investigation} : capacité d'étudier des problèmes complexes au moyen de méthodes mettant en jeu la réalisation 	d'expériences, l'analyse et l'interprétation des données et la synthèse de l'information afin de formuler des conclusions valides.} 
+	& 3.1 Formuler des hypothèses testables
+	& \\
+ 	\cline{3-4}
+	& 
+	& 3.2 Faire la revue de la documentation existante
+	& \\
+ 	\cline{3-4}
+	& 
+	& 3.3 Planifier et préparer des essais
+	& \\
+ 	\cline{3-4}
+	&
+	& 3.4 Exécuter l'expérimentation
+	& \\
+ 	\cline{3-4}
+ 	& 
+ 	& 3.5 Analyser les résultats expérimentaux
+ 	& \\
+ 	\cline{3-4}
+	& 
+	& 3.6 Vérifier les hypothèses et argumenter
+	& \\
+	\hline
+4 	& \Block[l,t]{6-1}{\textbf{Conception} : capacité de concevoir des solutions à des problèmes d'ingénierie complexes et évolutifs et de concevoir des systèmes, des composants ou des processus qui répondent aux besoins spécifiés, tout en tenant compte des risques pour la santé et la sécurité publiques, des aspects législatifs et réglementaires, ainsi que des incidences économiques, environnementales, culturelles et sociales.} 
+	& 4.1 Identifier les besoins, requis et fonctions
+	& \\
+ 	\cline{3-4}
+	& 
+	& 4.2 Modéliser les éléments à concevoir
+	& \\
+ 	\cline{3-4}
+	& 
+	& 4.3 Procéder à la conception  
+	& \\
+ 	\cline{3-4}
+	& 
+	& 4.4 Considérer les relations systémiques \mbox{internes/externes}  
+	& \\
+ 	\cline{3-4}
+	& 
+	& 4.5 Évaluer et itérer
+	& \\
+ 	\cline{3-4}
+	& 
+	& 4.6 Innover dans sa conception  
+	& \\
+	\hline
+5 	& \Block[l,t]{4-1}{\textbf{Utilisation d'outils d'ingénierie } : capacité de créer et de sélectionner des techniques, des ressources et des outils d'ingénierie modernes et de les appliquer, de les adapter et de les étendre à un éventail d'activités simples ou complexes, tout en comprenant les contraintes connexes.} 
+	& 5.1 Évaluer et sélectionner les outils appropriés  
+	& \\
+ 	\cline{3-4}
+	& 
+	& 5.2 Appliquer un outil d'ingénierie
+	& \\
+ 	\cline{3-4}
+	& 
+	& 5.3 Créer ou adapter un outil  
+	& \\
+ 	\cline{3-4}
+	& 
+	& 5.4 Intégrer des outils  
+	& \\
+	\hline
+6 	& \Block[l,t]{4-1}{\textbf{Travail individuel et en équipe } : capacité de fonctionner efficacement en tant que membre ou chef d'équipe, de préférence dans un contexte de travail multidisciplinaire.} 
+ 	& 6.1 Établir et remplir son rôle dans l'équipe  
+ 	& \\
+ 	\cline{3-4}
+	& 
+	& 6.2 Interagir en équipe
+	& \\
+ 	\cline{3-4}
+	& 
+	& 6.3 Contribuer au fonctionnement de l'équipe
+	& \\
+ 	\cline{3-4}
+	& 
+	& 6.4 Contribuer à l'évolution de l'équipe
+	& \\
+	\hline
+7 	& \Block[l,t]{3-1}{\textbf{Communication} : habileté à communiquer efficacement des concepts d'ingénierie complexes, au sein de la profession et au public en général, notamment lire, rédiger, parler et écouter, comprendre et rédiger de façon efficace des rapports et de la documentation pour la conception, ainsi qu'énoncer des directives claires et y donner suite.} 
+	& 7.1 Lire et rédiger de la documentation
+	& \\
+ 	\cline{3-4}
+	& 
+	& 7.2 Préparer et donner une présentation
+	& \\
+ 	\cline{3-4}
+	& 
+	& 7.3 Adapter son discours selon la situation
+	& \\
+	\hline
+8 	& \Block[l,t]{3-1}{\textbf{Professionnalisme} : compréhension des rôles et des responsabilités de l'ingénieur dans la société, y compris le rôle essentiel de protection du public et l'intérêt public.} 
+	& 8.1 Reconnaître l'agir professionnel 
+	& \\
+ 	\cline{3-4}
+	& 
+	& 8.2 Expliquer les rôles de l'ingénieur 
+	& \\
+ 	\cline{3-4}
+	& 
+	& 8.3 Expliquer les responsabilités de l'ingénieur, y compris la protection du public
+	& \\
+	\hline
+9 	& \Block[l,t]{4-1}{\textbf{Impact du génie sur la société et l'environnement } : capacité à analyser les aspects sociaux et environnementaux des activités liées au génie, notamment comprendre les interactions du génie avec les aspects économiques et sociaux, la santé, la sécurité, les lois et la culture de la société; les incertitudes liées à la prévision de telles interactions; et les concepts de développement durable et de bonne gérance de l'environnement.} 
+	& 9.1 Connaître les principes du développement durable 
+	& \\
+ 	\cline{3-4}
+	& 
+	& 9.2 Analyser l'impact socio-économique de son travail 
+	& \\
+ 	\cline{3-4}
+	& 
+	& 9.3 Analyser l'impact de son travail sur l'environnement
+	& \\
+ 	\cline{3-4}
+	& 
+	& 9.4 Évaluer les risques et les incertitudes d'une situation
+	& \\
+	\hline
+10 	& \Block[l,t]{3-1}{\textbf{Déontologie et équité} : compréhension et respect des principes d'éthique et de responsabilité professionnelles, ainsi que d'équité.} 
+	& 10.1 Respecter le code de déontologie 
+	& \\
+ 	\cline{3-4}
+	& 
+	& 10.2 Agir avec intégrité et de façon éthique 
+	& \\
+ 	\cline{3-4}
+	& 
+	& 10.3 Traiter les situations de façon équitable
+	& \\
+	\hline
+11 	& \Block[l,t]{3-1}{\textbf{Économie et gestion de projets} : capacité à intégrer de façon appropriée les pratiques d'économie et d'affaires, comme la gestion de projets, des risques et du changement, dans l'exercice du génie, et de bien tenir compte des contraintes associées à ces pratiques.} 
+	& 11.1 Appliquer les principes économiques 
+	& \\
+ 	\cline{3-4}
+	& 
+	& 11.2 Planifier et gérer un projet 
+	& \\
+ 	\cline{3-4}
+	& 
+	& 11.3 Gérer les risques ou le changement
+	& \\
+	\hline
+12 	& \Block[l,t]{3-1}{\textbf{Apprentissage continu} : capacité à cerner et à combler ses propres besoins de formation dans un monde en constante évolution, et ce, de façon à maintenir sa compétence et à contribuer à l'avancement des connaissances.} 
+	& 12.1 Identifier et palier les lacunes dans ses savoirs et ses savoir-faire
+	& \\
+ 	\cline{3-4}
+	& 
+	& 12.2 Identifier et combler ses besoins de formation
+	& \\
+ 	\cline{3-4}
+	& 
+	& 12.3 Identifier les besoins d'avancement des connaissances 
+	& \\
+	\hline
+\end{NiceTabularX}
+\end{scriptsize}
+\end{document}

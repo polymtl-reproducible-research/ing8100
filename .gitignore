@@ -1,0 +1,19 @@
+# LaTeX build artefacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.bbl
+*.blg
+
+# Built documents are produced by CI, not committed.
+# See .github/workflows/plan-de-cours.yml
+plan-de-cours/*.pdf
+
+# macOS
+.DS_Store
