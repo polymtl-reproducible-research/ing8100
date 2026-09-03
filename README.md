@@ -47,12 +47,15 @@ First time on this machine? You need a LaTeX toolchain installed before `make`
 will work. See [Prerequisites](#prerequisites) below.
 
 ```bash
-make
+make clean && make
 open ING8100_plan_de_cours.pdf
 ```
 
 Read the PDF before going further. Local building exists for exactly this: CI
-will tell you whether it *compiles*, not whether the dates are right.
+will tell you whether it *compiles*, not whether the dates are right. The
+`clean` avoids `make: Nothing to be done for` — a leftover PDF newer than the
+`.tex` looks up to date to `make` even after you've edited the source in an
+editor that doesn't bump the mtime the way you'd expect.
 
 ### 3. Commit and push
 
