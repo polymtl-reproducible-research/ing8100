@@ -43,6 +43,9 @@ week and any holiday that lands on the course's weekday.
 
 ### 2. Build locally and check it
 
+First time on this machine? You need a LaTeX toolchain installed before `make`
+will work. See [Prerequisites](#prerequisites) below.
+
 ```bash
 make
 open ING8100_plan_de_cours.pdf
@@ -123,6 +126,24 @@ Earlier releases fail — see Notes.
 
 `latexmk` is used when available; otherwise the Makefile falls back to two
 `pdflatex` passes, so it is optional.
+
+**Why not a conda environment?** It would be nice to pin the toolchain in an
+isolated environment instead of installing TeX system-wide, but neither
+conda-forge package works for this document, so don't spend time on this:
+
+- `conda install -c conda-forge texlive-core` installs only the TeX engine
+  binaries, not the LaTeX package tree, so `pdflatex` ends up with almost
+  every `\usepackage` missing. That's by design of the package, not a
+  misconfiguration; see
+  [conda-forge/texlive-core-feedstock#14](https://github.com/conda-forge/texlive-core-feedstock/issues/14).
+- `conda install -c conda-forge tectonic` is a real, self-contained engine,
+  but its default package bundle predates the TeX Live 2025 kernel that the
+  pinned `nicematrix.sty` requires. Run directly against this document, it
+  fails with the same `Your LaTeX release is too old` error described in
+  Notes below.
+
+A system install (MacTeX/BasicTeX above, or your Linux distribution's
+TeX Live 2024+) is the option that actually works.
 
 ### Commands
 
