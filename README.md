@@ -87,7 +87,7 @@ reachable, which is the point.
 ### 5. Put the link on Moodle
 
 ```
-https://github.com/polymtl-reproducible-research/ing8100/releases/download/2026.0/ING8100_plan_de_cours.pdf
+https://github.com/polymtl-reproducible-research/syllabus/releases/download/2026.0/ING8100_plan_de_cours.pdf
 ```
 
 Substitute your tag. Use the **pinned tag** on Moodle so students always see the
@@ -97,7 +97,7 @@ silently change the syllabus they were shown.
 For the course website, where you would rather not edit a link every year:
 
 ```
-https://github.com/polymtl-reproducible-research/ing8100/releases/latest/download/ING8100_plan_de_cours.pdf
+https://github.com/polymtl-reproducible-research/syllabus/releases/latest/download/ING8100_plan_de_cours.pdf
 ```
 
 Both require the repository to be **public**. On a private repository they prompt
