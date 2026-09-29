@@ -17,6 +17,9 @@
 \usepackage[T1]{fontenc}   % ajout: encodage T1 requis pour le francais
                             % (accents et cesure corrects) -- absent du gabarit Poly
 \usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage{xurl}          % ajout: permet aux URL longues de se couper a
+                            % n'importe quel caractere plutot que de deborder
+                            % de la page (doit etre charge apres hyperref)
 
 %%%% Marges %%%%
 \hoffset 		-45pt
@@ -267,7 +270,7 @@ recherche confidentielles ou des contenus dont elles ne détiennent pas les droi
 \item[\tiny $\blacksquare$] Les travaux sont remis sous forme de dépôt public sur l'organisation GitHub du cours (\url{https://github.com/polymtl-reproducible-research}), sauf indication contraire.
 \item[\tiny $\blacksquare$] Le jeu de données du laboratoire 2 est déposé sur l'instance d'enseignement de Borealis.
 \item[\tiny $\blacksquare$] L'état du dépôt à l'heure limite de remise fait foi ; l'historique Git sert de preuve de dépôt.
-\item[\tiny $\blacksquare$] Tout retard doit être signalé avant l'échéance. [À COMPLÉTER : politique de pénalité.]
+\item[\tiny $\blacksquare$] Tout retard doit être signalé avant l'échéance.
 \item[\tiny $\blacksquare$] L'usage des SIAG doit être documenté (voir la rubrique \og Méthodes d'enseignement et d'apprentissage \fg{}).
 \end{itemize}
 
